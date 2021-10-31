@@ -10,7 +10,7 @@
 
 ### Important Note 1:
 
-In this repository there are neither the vault.yml for the production and the vault.yml for staging.  
+In this repository there are neither the vault.yml for the production nor the vault.yml for staging.  
 
 Those files will be provided privately.
 
