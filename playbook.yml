@@ -1,9 +1,7 @@
 ---
  - hosts: all
    become: yes
-   remote_user: bootcamp
-   vars_files:
-     - '~/ansible/environments/{{ var_env }}/vault.yml'
+   remote_user: bootcamp   
 
    tasks:
    - name: Deploy from git repo
