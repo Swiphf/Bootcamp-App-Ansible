@@ -3,31 +3,7 @@
    become: yes
    remote_user: bootcamp   
 
-   tasks:
-   - name: Deploy from git repo
-     git:
-       force: yes
-       repo: '{{ source_repository }}'
-       dest: '{{ app_directory }}/'
-
-   - name: Update nodejs package
-     shell: curl -fsSL https://deb.nodesource.com/setup_14.x | sudo -E bash -
-
-   - name: Install nodejs
-     apt:
-       name: nodejs
-       state: present
-
-   - name: Npm initialization
-     shell: npm init -y
-     args:
-       chdir: '{{ app_directory }}/'
-
-   - name: Install node dependencies
-     shell: npm install
-     args:
-       chdir: '{{ app_directory }}/'
-
+   tasks:   
    - name: Get public IP
      community.general.ipify_facts:
 
