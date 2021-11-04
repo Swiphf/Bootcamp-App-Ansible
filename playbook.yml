@@ -23,8 +23,8 @@
      wait_for:
        timeout: 5
        
-   - name: Change directory name
-     command: mv /home/bootcamp/_artifact1 /home/bootcamp/bootcamp-app
+   - name: Change directory name     
+     command: mv /home/bootcamp/_artifact1 ./bootcamp-app
    
               
    - name: Create environment variables file
