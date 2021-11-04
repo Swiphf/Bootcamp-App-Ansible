@@ -45,6 +45,10 @@
          OKTA_CLIENT_ID={{ okta_client }}
          OKTA_CLIENT_SECRET={{ okta_client_secret }}
 
+   - name: "install nodemon"
+        shell: npm install --save-dev nodemon@2
+        args: 
+          chdir: '{{ app_directory }}'
 
    - name: db initialization
      shell: npm run initdb
