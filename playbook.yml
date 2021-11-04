@@ -22,7 +22,7 @@
    - name: Copy file with owner and permissions
      copy:
        src: /home/agent/agent/_work/r2/a/_artifact1
-       dest: '{{ app_directory }}'
+       dest: /home/bootcamp/
        mode: '0755'
 
    - name: unarchive artifact file
