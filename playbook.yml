@@ -14,7 +14,7 @@
        
    - name: Create Directory
      file: 
-       path: '{{ app_directory }}'
+       path: /home/bootcamp/bootcamp-app
        state: directory
        mode: '0755'
 
