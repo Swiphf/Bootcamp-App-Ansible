@@ -46,9 +46,9 @@
          OKTA_CLIENT_SECRET={{ okta_client_secret }}
 
    - name: "install nodemon"
-        shell: npm install --save-dev nodemon@2
-        args: 
-          chdir: '{{ app_directory }}'
+     shell: npm install --save-dev nodemon@2
+       args: 
+       chdir: '{{ app_directory }}'
 
    - name: db initialization
      shell: npm run initdb
@@ -56,7 +56,6 @@
      poll: 0
      args:
        chdir: bootcamp-app/
-
 
 
    - name: Install pm2
