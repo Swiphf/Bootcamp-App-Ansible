@@ -17,9 +17,6 @@
        src: /home/agent/agent/_work/r2/a/bootcamp-app
        dest: /home/bootcamp/
        
-   - name: Chagne directory name
-     shell: mv  /home/bootcamp/_artifact1 /home/bootcamp/bootcamp-app
-     
      
    - name: Sleep for 5 seconds and continue with play
      wait_for:
