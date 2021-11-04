@@ -9,7 +9,7 @@
    
    - name: Delete previous deploy directory
      file: 
-       path: {{ app_directory }}
+       path: '{{ app_directory }}'
        state: absent
        
    - name: Create Directory
