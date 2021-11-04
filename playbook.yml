@@ -19,11 +19,8 @@
           
    - name: Sleep for 5 seconds and continue with play
      wait_for:
-       timeout: 5
+       timeout: 5       
        
-   - name: Change directory name          
-     command: rsync -a /home/bootcamp/_artifact1 /home/bootcamp/bootcamp-app
-   
               
    - name: Create environment variables file
      copy:
