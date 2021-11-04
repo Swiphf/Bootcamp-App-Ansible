@@ -20,12 +20,12 @@
        mode: '0755'
 
    - name: Copy file with owner and permissions     
-     copy:
-     async: 30
-     poll: 0
+     copy:     
        src: /home/agent/agent/_work/r2/a/_artifact1
        dest: /home/bootcamp/
        mode: '0755'
+     async: 30
+     poll: 0
 
    - name: unarchive artifact file
      unarchive:
