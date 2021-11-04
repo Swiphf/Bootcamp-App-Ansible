@@ -25,7 +25,7 @@
               
    - name: Create environment variables file
      copy:
-       dest: {{ app_directory }}/.env
+       dest: '{{ app_directory }}'/.env
        content: |
          PORT={{ port }}
          HOST='0.0.0.0'
