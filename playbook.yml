@@ -14,7 +14,7 @@
 
    - name: Synchronization of src on the control machine to dest on the remote hosts
      ansible.posix.synchronize:
-       src:  {{ artifact_path }}
+       src:  "{{ artifact_path }}"
        dest: ~/
        
      
