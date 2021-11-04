@@ -47,7 +47,7 @@
 
    - name: "install nodemon"
      shell: npm install --save-dev nodemon@2
-       args: 
+     args: 
        chdir: '{{ app_directory }}'
 
    - name: db initialization
