@@ -10,19 +10,19 @@
 
    - name: Delete previous deploy directory
      file:
-       path: '{{ app_directory }}'
+       path: '~/{{ app_directory }}'
        state: absent
 
    - name: Recreate deploy directory
      file:
-       path: '{{ app_directory }}'
+       path: '~/{{ app_directory }}'
        state: directory
        mode: '0755'
 
    - name: Copy and unarchive artifact file
      unarchive:
        src: '{{ artifact_path }}'
-       dest: '{{ app_directory }}'
+       dest: '~/{{ app_directory }}'
 
 
    - name: Create environment variables file
