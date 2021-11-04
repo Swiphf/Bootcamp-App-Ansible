@@ -11,13 +11,7 @@
    - name: Delete previous deploy directory
      file:
        path: '{{ app_directory }}'
-       state: absent
-       
-   - name: Recreate deploy directory
-     file:
-       path: '{{ app_directory }}'
-       state: directory
-       mode: '0755'
+       state: absent         
 
 
    - name: Synchronization of src on the control machine to dest on the remote hosts
@@ -28,11 +22,10 @@
    - name: Sleep for 5 seconds and continue with play
      wait_for:
        timeout: 5
-
-   - name: unarchive artifact file
-     unarchive:
-       src: '{{ artifact_path }}'
-       dest: '{{ app_directory }}'
+       
+   - name: Change directory name
+     command: mv /home/bootcamp/_artifact1 /home/bootcamp/bootcamp-app
+   
               
    - name: Create environment variables file
      copy:
