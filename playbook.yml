@@ -49,6 +49,7 @@
      npm:
        name: nodemon
        state: present
+       global: yes
 
    - name: db initialization
      shell: npm run initdb
