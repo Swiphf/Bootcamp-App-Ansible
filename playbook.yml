@@ -19,7 +19,12 @@
        
    - name: Chagne directory name
      shell: mv  /home/bootcamp/_artifact1 /home/bootcamp/bootcamp-app
-       
+     
+     
+   - name: Sleep for 5 seconds and continue with play
+     wait_for:
+       timeout: 5
+     
               
    - name: Create environment variables file
      copy:
