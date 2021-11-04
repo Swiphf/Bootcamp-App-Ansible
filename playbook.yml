@@ -25,7 +25,7 @@
               
    - name: Create environment variables file
      copy:
-       dest: "{{ app_directory }}/.env"
+       dest: /home/bootcamp/bootcamp-app/.env
        content: |
          PORT={{ port }}
          HOST='0.0.0.0'
