@@ -16,10 +16,9 @@
      ansible.posix.synchronize:
        src: /home/agent/agent/_work/r2/a/_artifact1
        dest: /home/bootcamp/
-          
-   - name: Sleep for 5 seconds and continue with play
-     wait_for:
-       timeout: 5       
+       
+   - name: Chagne directory name
+     shell: mv  /home/bootcamp/_artifact1 /home/bootcamp/bootcamp-app
        
               
    - name: Create environment variables file
