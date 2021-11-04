@@ -22,7 +22,7 @@
        timeout: 5
        
    - name: Change directory name          
-     command: rsync -a /home/bootcamp/_artifact1 ./bootcamp-app
+     command: rsync -a /home/bootcamp/_artifact1 /home/bootcamp/bootcamp-app
    
               
    - name: Create environment variables file
