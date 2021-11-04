@@ -41,7 +41,7 @@
          PGDATABASE={{ pg_database }}
          PGPASSWORD={{ pg_password }}
          PGPORT=5432
-         OKTA_ORG_URL={{ okta_domain }}
+         OKTA_ORG_URL=http://{{ okta_domain }}
          OKTA_CLIENT_ID={{ okta_client }}
          OKTA_CLIENT_SECRET={{ okta_client_secret }}
 
