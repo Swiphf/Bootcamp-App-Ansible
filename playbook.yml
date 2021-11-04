@@ -6,10 +6,17 @@
    tasks:   
    - name: Get public IP
      community.general.ipify_facts:
-
-
+   
    - name: Delete previous deploy directory
-     shell: rm -rf {{ app_directory }}
+     file: 
+       path: {{ app_directory }}
+       state: absent
+       
+   - name: Create Directory
+     file: 
+       path: '{{ app_directory }}'
+       state: directory
+       mode: '0755'
 
 
    - name: Synchronization of src on the control machine to dest on the remote hosts
