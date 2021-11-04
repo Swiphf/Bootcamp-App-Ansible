@@ -19,7 +19,13 @@
        state: directory
        mode: '0755'
 
-   - name: Copy and unarchive artifact file
+   - name: Copy file with owner and permissions
+     copy:
+       src: /home/agent/agent/_work/r2/a/_artifact1
+       dest: '{{ app_directory }}'
+       mode: '0755'
+
+   - name: unarchive artifact file
      unarchive:
        src: '{{ artifact_path }}'
        dest: '{{ app_directory }}'
