@@ -11,4 +11,12 @@
      file: 
        path: '{{ app_directory }}'
        state: absent
-                      
+       
+   - name: Create Directory
+     file: 
+       path: /home/bootcamp/bootcamp-app
+       state: directory
+       mode: '0755'
+
+
+  
