@@ -19,4 +19,10 @@
        mode: '0755'
 
 
-  
+   - name: Synchronization of src on the control machine to dest on the remote hosts
+     ansible.posix.synchronize:
+       src:  /home/agent/agent/_work/r2/a/bootcamp-app
+       dest: /home/bootcamp/
+       
+     
+   
