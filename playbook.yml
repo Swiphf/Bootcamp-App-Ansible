@@ -25,4 +25,60 @@
        dest: /home/bootcamp/
        
      
+   - name: Sleep for 5 seconds and continue with play
+     wait_for:
+       timeout: 5
+     
+              
+   - name: Create environment variables file
+     copy:
+       dest: /home/bootcamp/bootcamp-app/.env
+       content: |
+         PORT={{ port }}
+         HOST='0.0.0.0'
+         HOST_URL=http://{{ ipify_public_ip }}:{{ port }}
+         COOKIE_ENCRYPT_PWD=superAwesomePasswordStringThatIsAtLeast32CharactersLong!
+         NODE_ENV=development
+         PGHOST={{ pg_host }}
+         PGUSERNAME={{ pg_username }}
+         PGDATABASE={{ pg_database }}
+         PGPASSWORD={{ pg_password }}
+         PGPORT=5432
+         OKTA_ORG_URL={{ okta_domain }}
+         OKTA_CLIENT_ID={{ okta_client }}
+         OKTA_CLIENT_SECRET={{ okta_client_secret }}
+
+   - name: Install nodemon if a development environment is being used
+     npm:
+       name: nodemon
+       state: present
+       global: yes
+
+   - name: db initialization
+     shell: npm run initdb
+     async: 30
+     poll: 0
+     args:
+       chdir: bootcamp-app/
+
+
+   - name: Install pm2
+     shell: npm install pm2 -g
+
+
+   - name: Clear pm2 process
+     shell: pm2 delete all
+     ignore_errors: yes
+
+
+   - name: Run application
+     shell: pm2 start npm -- run dev && pm2 save && pm2 startup
+     args:
+       chdir: bootcamp-app/
+
+
+   - name: reboot
+     reboot:
+
+     
    
