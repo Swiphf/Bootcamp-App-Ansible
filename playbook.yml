@@ -22,7 +22,7 @@
    - name: Synchronization of src on the control machine to dest on the remote hosts
      ansible.posix.synchronize:
        src:  /home/agent/agent/_work/r2/a/bootcamp-app
-       dest: /home/bootcamp/bootcamp-app
+       dest: /home/bootcamp/
        
      
    - name: Sleep for 5 seconds and continue with play
